@@ -37,6 +37,8 @@ public class MainClass {
          * END USER VERSION
          */
 
+        System.out.println();
+        System.out.println("Initialising puzzle solver. \n");
         Scanner in = new Scanner(System.in);
 
         // initialise and keep pointer to root
@@ -128,6 +130,7 @@ public class MainClass {
                         // attempt to find the state requested
                         if(find()){
                             stateNotYetFound = false;
+                            break;
                         }
 
                         else {
@@ -153,7 +156,7 @@ public class MainClass {
                 System.out.println("!!! No solution could be found in the given amount of time.");
             }
 
-            System.out.print("\nProgram finished running. Goodbye.");
+            System.out.println("\nProgram finished running. Goodbye.\n");
         }
     }
 
