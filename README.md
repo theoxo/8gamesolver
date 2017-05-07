@@ -16,4 +16,4 @@ In this update:
 
 What it does (v1.0 only, v1.1 runs as detailed above): Generates all reachable puzzle states from users first input, then looks for second input in those solutions. If found, prints out the path to reach that state (aka a solution to the puzzle).
 
-Current status: Compiles, runs, horribly inefficient solutions and hour long load time.
+Current status: Compiles, runs, horribly inefficient solutions and hour long load time.~
