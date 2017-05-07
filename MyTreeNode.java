@@ -2,8 +2,7 @@
  * Created by theoxola on 2017-03-31.
  */
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class MyTreeNode {
@@ -48,25 +47,6 @@ public class MyTreeNode {
         return children;
     }
 
-    // returns 1 if it finds the given string; else 0.
-    public static int contains(MyTreeNode root, String s){
-        if (root.getForm().equals(s)){
-            return 1;
-        }
-
-        else {
-
-            List<MyTreeNode> kids = root.getChildren();
-            int sumChildren = 0;
-
-            for (MyTreeNode kid : kids){
-                sumChildren += contains(kid, s);
-            }
-
-            return 0 + sumChildren;
-        }
-    }
-
     // get tree treePath to node by recursively returning parents
     public static List<MyTreeNode> treePath(MyTreeNode node, List<MyTreeNode> path){
 
@@ -81,68 +61,34 @@ public class MyTreeNode {
     }
 
 
-    /*
-    // get Node by search after string
-    public static void getNode(String searchLayout, List<MyTreeNode> nodeList, MyTreeNode trav){
-        List<MyTreeNode> kids = trav.getChildren();
+    public static MyTreeNode getNode(String searchLayout, MyTreeNode root){
 
-        if (trav.getForm().equals(searchLayout)){
-            nodeList.add(trav);
-            System.out.println("Node found");
-            System.out.println(nodeList.get(0).getForm());
-        }
+        if (root != null){
 
-        else if (!kids.isEmpty()){
-            for (MyTreeNode kid : kids){
+            Queue<MyTreeNode> queue = new LinkedList<MyTreeNode>();
 
-                getNode(searchLayout, nodeList, kid);
-            }
-        }
+            queue.add(root);
 
-    }*/
+            while (!queue.isEmpty()){
+                MyTreeNode node = queue.remove();
 
+                if (node.getForm().equals(searchLayout)){
+                    return node;
+                }
 
-
-
-    public static MyTreeNode getNode(String searchLayout, MyTreeNode trav){
-        MyTreeNode res = null;
-        if (trav.getForm().equals(searchLayout)){
-            return trav;
-        }
-
-        else {
-            List<MyTreeNode> children = trav.getChildren();
-
-            int childrenLength = children.size();
-
-            for (int i = 0; i < childrenLength && res == null; i++){
-                res = getNode(searchLayout, children.get(i));
-               // System.out.println("Test\t" +i);
-            }
-
-            return res;
-        }
-    }
-    /*
-    public MyTreeNode getNode(String searchLayout){
-
-        List<MyTreeNode> kids = this.getChildren();
-
-        if (this.getForm().equals(searchLayout)){
-            return (this);
-        }
-
-        else if(!kids.isEmpty()){
-            for (MyTreeNode kid : kids){
-                kid.getNode(searchLayout);
+                else {
+                     queue.addAll(node.getChildren());
+                }
 
             }
+
+            //only reached if tried all nodes
+            return null;
+
         }
 
         else {
             return null;
         }
-
     }
-    */
 }
