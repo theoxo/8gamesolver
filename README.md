@@ -1,7 +1,7 @@
 # 8gamesolver
 8-tile "sliding puzzle game" solver
 
-___ V1.1 OUT NOW
+**V1.1 OUT NOW**
 
 In this update:
 
@@ -12,8 +12,8 @@ In this update:
 – Removed outdated / legacy code. Source files should now be more readable.
 
 
-~v1.0 info
+~~v1.0 info
 
-What it does (v1.0 only, v1.1 runs as detailed above): Generates all reachable puzzle states from users first input, then looks for second input in those solutions. If found, prints out the path to reach that state (aka a solution to the puzzle).
+~~What it does (v1.0 only, v1.1 runs as detailed above): Generates all reachable puzzle states from users first input, then looks for second input in those solutions. If found, prints out the path to reach that state (aka a solution to the puzzle).~~
 
-Current status: Compiles, runs, horribly inefficient solutions and hour long load time.~
+~~Current status: Compiles, runs, horribly inefficient solutions and hour long load time.~~
